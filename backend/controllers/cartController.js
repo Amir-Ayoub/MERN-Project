@@ -17,7 +17,6 @@ const addToCart = async(req,response) =>{
       await userModel.findByIdAndUpdate(req.body.userId,{cartData})
       response.json({success:true,message:"Added To Cart"})
     } catch (error) {
-        console.log("Error");
         response.json({success:false,message:"Error"})
     }
 
@@ -36,7 +35,6 @@ const removeFromCart = async(req,response) =>{
         response.json({success:true,message:"Removed From Cart"})
 
     } catch (error) {
-        console.log(error);
         response.json({success:false,message:"Error"})
         
     }
@@ -50,7 +48,6 @@ const getCart = async(req,response)=>{
         let cartData = await userData.cartData;
         response.json({success:true,cartData})
     } catch (error) {
-        console.log(error);
         response.json({success:false,message:"Error"})
         
     }
